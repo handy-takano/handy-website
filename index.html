@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>handy - 宮城県名取市のリフォーム・資産運用コンサルティング</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.2s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.4s forwards;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.8s forwards;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: linear-gradient(45deg, #f7f7f7, #ffffff);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border: 5px solid #f8f9fa;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffd700;
+            display: block;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            margin-bottom: 1rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-question h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem 2rem;
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background: linear-gradient(45deg, #f7f7f7, #ffffff);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-content p {
+            font-style: italic;
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .testimonial-content p::before {
+            content: '"';
+            font-size: 3rem;
+            color: #667eea;
+            position: absolute;
+            left: -1rem;
+            top: -0.5rem;
+            font-family: serif;
+        }
+
+        .testimonial-author h4 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .testimonial-author span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <img src="https://lh5.googleusercontent.com/ELnUy60wFDoSk-mRvI8X3IZQqJwkkp3QrxkjxHQFt5Xp-G7RgnHelbIROIuVJi9jMmg8WK918tQOK9xyCXjm_dIdmtR0IquQGlLadbqbbQDxMoGgAzhQqpqRZiQsRiyUEGssRGsVYA3PX5qDUx6sAkkyzqucRLeQeCoKoEgyzHZ8iPCsRgemPA=w1280" alt="handy" class="logo">
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#services">サービス</a></li>
+                    <li><a href="#about">会社概要</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>リフォーム × 資産運用</h1>
+            <div class="hero-subtitle">ローン負担を軽減しながら理想の住まいを実現</div>
+            <p class="hero-description">
+                宮城県を拠点に、単なるリフォームを超えた新しいサービスを提供。資産運用によりリフォームローンや住宅ローンの早期返済をサポートし、お客様の経済的負担を大幅に軽減します。
+            </p>
+            <div class="cta-buttons">
+                <a href="mailto:handy.takano@gmail.com?subject=【無料相談予約】&body=お名前:%0D%0D電話番号:%0D%0D希望日時:%0D%0D相談内容:%0D" class="btn btn-primary">無料相談予約</a>
+                <a href="#services" class="btn btn-secondary">サービス詳細</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title fade-in">私たちのサービス</h2>
+            <p class="section-subtitle fade-in">リフォームと資産運用の融合で、あなたの未来をより豊かに</p>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏠</div>
+                    <h3>総合リフォーム</h3>
+                    <p>キッチン、バスルーム、内装から外装まで、お客様のライフスタイルに合わせた最適なリフォームプランをご提案します。宮城県内の施工実績豊富な職人が、品質の高い工事をお約束します。</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">📈</div>
+                    <h3>資産運用コンサルティング</h3>
+                    <p>リフォームローンや住宅ローンの借り換え時に、効果的な資産運用プランをご提案。運用益でローンの早期返済を目指し、さらなる資産形成も同時に行います。</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">💰</div>
+                    <h3>ローン最適化サービス</h3>
+                    <p>現在のローン状況を分析し、借り換えによる金利削減効果と資産運用を組み合わせて、お客様の家計負担を最小化するプランを設計します。</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔧</div>
+                    <h3>アフターサポート</h3>
+                    <p>施工後の定期メンテナンスから資産運用の進捗管理まで、長期間にわたって安心のサポート体制を整えています。お客様との信頼関係を大切にします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image fade-in">
+                    <img src="https://lh6.googleusercontent.com/GA8kr2m82WHzyLSuV_eEfvFLj-9r8nZZBRJxhxx3eQKHWxDL4ewgY9Q2YrvQ6pjJ2iHGRp7K-oSUeFjrbYLNgqxRPsu-QHW84GQwpGVVzFN0BjZ5i_NuKN0Ylnb9F0KQq4CrFKG3Bf6R7WPa4EmZbwaO5Hj7Cg88xAtM9-jtBPhf7VweOLw20g=w1280" alt="代表者">
+                </div>
+                <div class="about-text fade-in">
+                    <h2>代表からのメッセージ</h2>
+                    <p>
+                        不動産売買や付帯設備工事に長年携わってきた経験から、多くのお客様がローン負担に悩まれている現状を目の当たりにしてきました。そこで私たちは、単なるリフォーム会社を超えた新しい価値提供を決意しました。
+                    </p>
+                    <p>
+                        リフォームによって住環境を改善するだけでなく、資産運用という手法を活用することで、お客様の経済的負担を軽減し、より豊かな生活を実現していただきたい。                        それが私たちhandyの使命です。
+                    </p>
+                    <p>
+                        お客様一人ひとりの状況に合わせたオーダーメイドのプランをご提案し、理想の住まいと安心の将来設計の両立をサポートいたします。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title fade-in" style="color: white;">選ばれる理由</h2>
+            <div class="features-grid">
+                <div class="feature-item fade-in">
+                    <span class="feature-number">01</span>
+                    <h3>革新的なサービス</h3>
+                    <p>宮城県初のリフォーム×資産運用融合サービス</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <span class="feature-number">02</span>
+                    <h3>豊富な実績</h3>
+                    <p>地域密着で培った信頼と施工実績</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <span class="feature-number">03</span>
+                    <h3>トータルサポート</h3>
+                    <p>設計から資産運用まで一貫してサポート</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <span class="feature-number">04</span>
+                    <h3>長期保証</h3>
+                    <p>安心のアフターサービスと継続的なサポート</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title fade-in">よくあるご質問</h2>
+            <p class="section-subtitle fade-in">お客様からよくいただくご質問にお答えします</p>
+            
+            <div class="faq-list">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>資産運用とリフォームはどのような関係があるのですか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>リフォームローンや住宅ローンの借り換え時に、効果的な資産運用を行うことで運用益を生み出し、その利益でローンの早期返済を目指します。さらに余剰資金で継続的な資産形成も可能になります。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>資産運用にリスクはありませんか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>お客様のリスク許容度に応じて、保守的なものから積極的なものまで幅広い運用プランをご用意しています。まずは無料相談でお客様の状況をお聞かせください。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>リフォーム工事の保証期間はどのくらいですか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>工事内容により異なりますが、構造部分は10年、設備関係は3～5年の保証をご提供しています。定期的なメンテナンスサービスも行っております。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>相談料金はかかりますか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>初回のご相談は完全無料です。リフォームプランや資産運用についてじっくりとお話をお聞きし、最適なプランをご提案いたします。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">お客様の声</h2>
+            <p class="section-subtitle fade-in">実際にサービスをご利用いただいたお客様からのメッセージ</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        <p>"リフォームと同時に資産運用の提案をいただき、月々のローン負担が大幅に軽減されました。10年後の家計がとても楽になりそうです。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>仙台市のお客様</h4>
+                        <span>キッチン・リビングリフォーム + 資産運用プラン</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        <p>"最初は資産運用に不安がありましたが、丁寧な説明と保守的なプランのおかげで安心してお任せできました。リフォームの仕上がりも素晴らしく、大満足です。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>柴田郡柴田町のお客様</h4>
+                        <span>外壁・屋根リフォーム + 住宅ローン借り換えサポート</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">お問い合わせ</h2>
+            <p class="section-subtitle fade-in">お気軽にご相談ください。初回相談は無料です。</p>
+            
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3 style="margin-bottom: 2rem; color: #2c3e50;">会社情報</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🏢</div>
+                        <div>
+                            <h4>会社名</h4>
+                            <p>handy</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>所在地</h4>
+                            <p>宮城県名取市</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>メールアドレス</h4>
+                            <p><a href="mailto:handy.takano@gmail.com" style="color: #667eea; text-decoration: none;">handy.takano@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>電話番号</h4>
+                            <p><a href="tel:090-2883-0216" style="color: #667eea; text-decoration: none;">090-2883-0216</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div>
+                            <h4>営業時間</h4>
+                            <p>9:00〜18:00<br>営業時間外も柔軟に対応いたします</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <h3 style="margin-bottom: 2rem; color: #2c3e50;">お問い合わせフォーム</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">お名前 *</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">メールアドレス *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">電話番号</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">お問い合わせ種別</label>
+                            <select id="subject" style="width: 100%; padding: 1rem; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1rem;">
+                                <option value="">選択してください</option>
+                                <option value="reform">リフォームについて</option>
+                                <option value="investment">資産運用について</option>
+                                <option value="loan">ローン相談</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">お問い合わせ内容 *</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">送信する</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 handy. All rights reserved.</p>
+            <p>宮城県名取市のリフォーム・資産運用コンサルティング</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:handy.takano@gmail.com?subject=【ホームページお問い合わせ】${subject}&body=お名前: ${name}%0Dメールアドレス: ${email}%0D電話番号: ${phone}%0D%0Dお問い合わせ内容:%0D${message}`;
+            
+            // Open mail client
+            window.location.href = mailtoLink;
+            
+            alert('メールクライアントが起動します。送信をお願いいたします。');
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(30, 60, 114, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
