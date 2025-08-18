@@ -171,6 +171,12 @@
             transform: translateY(-3px);
         }
 
+        /* Kindle button hover effect */
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 149, 0, 0.4);
+        }
+
         /* Services Section */
         .services {
             padding: 80px 0;
@@ -295,17 +301,6 @@
             padding: 80px 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-        }
-
-        /* 選ばれる理由の見出しを強調 */
-        .features .section-title {
-            color: #ffffff !important;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            font-size: 3rem;
-            background: none;
-            -webkit-background-clip: initial;
-            -webkit-text-fill-color: initial;
-            background-clip: initial;
         }
 
         .features-grid {
@@ -465,191 +460,80 @@
             font-size: 0.9rem;
         }
 
-        /* Contact Section - 改良版 */
-        .contact-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 20px;
-        }
-        
-        .contact-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .contact-section-title {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            text-align: center;
-        }
-        
-        .contact-section-subtitle {
-            font-size: 1.2em;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            text-align: center;
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: #f8f9fa;
         }
 
-        /* 2カラムレイアウト */
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        /* Googleフォーム用のスタイル */
-        .form-container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-        }
-        
-        .form-title {
-            color: #333;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .form-description {
-            color: #666;
-            font-size: 1em;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        /* レスポンシブ対応 */
-        .google-form {
-            width: 100%;
-            min-height: 400px;
-            border: none;
-            border-radius: 10px;
-        }
-        
-        /* 直接連絡用セクション */
-        .direct-contact {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .direct-contact-title {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            text-align: center;
+            gap: 4rem;
         }
 
-        .direct-contact-desc {
-            margin-bottom: 20px;
-            text-align: center;
-            opacity: 0.9;
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
-        
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .contact-method {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
+
+        .contact-item {
             display: flex;
             align-items: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .contact-method:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-        
-        .contact-icon {
-            font-size: 1.8em;
-            margin-right: 15px;
-            width: 50px;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .contact-details {
-            flex: 1;
-        }
-        
-        .contact-title {
-            font-size: 1.1em;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .contact-info {
-            font-size: 1em;
-            margin: 5px 0;
-        }
-        
-        .email-link, .tel-link {
-            color: #ffeb3b;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        
-        .email-link:hover, .tel-link:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-        
-        .copy-btn {
-            margin-left: 10px;
-            padding: 5px 10px;
-            background: rgba(255,255,255,0.2);
-            border: none;
-            border-radius: 5px;
-            color: white;
-            cursor: pointer;
-            font-size: 0.8em;
-            transition: background 0.3s ease;
-        }
-        
-        .copy-btn:hover {
-            background: rgba(255,255,255,0.3);
-        }
-        
-        .note {
-            font-size: 0.85em;
-            margin-top: 5px;
-            opacity: 0.8;
-        }
-        
-        /* 営業時間・対応エリア */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .info-box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
             border-radius: 10px;
-            backdrop-filter: blur(10px);
-            text-align: center;
         }
-        
-        .info-title {
-            font-size: 1.1em;
-            font-weight: bold;
-            margin-bottom: 8px;
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
 
         /* Footer */
@@ -702,42 +586,13 @@
                 text-align: center;
             }
 
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
-            }
-            
-            .contact-section {
-                padding: 40px 15px;
-            }
-            
-            .contact-section-title {
-                font-size: 2em;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .form-container {
-                padding: 1.5rem;
-            }
-            
-            .direct-contact {
-                padding: 1.5rem;
-            }
-            
-            .google-form {
-                min-height: 350px;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .features .section-title {
-                font-size: 2.5rem;
             }
         }
 
@@ -789,7 +644,220 @@
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title fade-in">私たちのサービス</h2>
-            <p class="section-subtitle fade-in">リフォームと資産運用の融合で、あなたの未来をより豊かに</p>
+            <p class="section-subtitle fade-in">実際にサービスをご利用いただいたお客様からのメッセージ</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        <p>"リフォームと同時に資産運用の提案をいただき、月々のローン負担が大幅に軽減されました。10年後の家計がとても楽になりそうです。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>仙台市のお客様</h4>
+                        <span>キッチン・リビングリフォーム + 資産運用プラン</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        <p>"最初は資産運用に不安がありましたが、丁寧な説明と保守的なプランのおかげで安心してお任せできました。リフォームの仕上がりも素晴らしく、大満足です。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>柴田郡柴田町のお客様</h4>
+                        <span>外壁・屋根リフォーム + 住宅ローン借り換えサポート</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">お問い合わせ</h2>
+            <p class="section-subtitle fade-in">お気軽にご相談ください。初回相談は無料です。</p>
+            
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3 style="margin-bottom: 2rem; color: #2c3e50;">会社情報</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🏢</div>
+                        <div>
+                            <h4>会社名</h4>
+                            <p>handy</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>所在地</h4>
+                            <p>宮城県名取市</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>メールアドレス</h4>
+                            <p><a href="mailto:handy.takano@gmail.com" style="color: #667eea; text-decoration: none;">handy.takano@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>電話番号</h4>
+                            <p><a href="tel:090-2883-0216" style="color: #667eea; text-decoration: none;">090-2883-0216</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div>
+                            <h4>営業時間</h4>
+                            <p>9:00～18:00<br>営業時間外も柔軟に対応いたします</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <h3 style="margin-bottom: 2rem; color: #2c3e50;">お問い合わせフォーム</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">お名前 *</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">メールアドレス *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">電話番号</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">お問い合わせ種別</label>
+                            <select id="subject" style="width: 100%; padding: 1rem; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1rem;">
+                                <option value="">選択してください</option>
+                                <option value="reform">リフォームについて</option>
+                                <option value="investment">資産運用について</option>
+                                <option value="loan">ローン相談</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">お問い合わせ内容 *</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">送信する</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 handy. All rights reserved.</p>
+            <p>宮城県名取市のリフォーム・資産運用コンサルティング</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:handy.takano@gmail.com?subject=【ホームページお問い合わせ】${subject}&body=お名前: ${name}%0Dメールアドレス: ${email}%0D電話番号: ${phone}%0D%0Dお問い合わせ内容:%0D${message}`;
+            
+            // Open mail client
+            window.location.href = mailtoLink;
+            
+            alert('メールクライアントが起動します。送信をお願いいたします。');
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(30, 60, 114, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>-in">リフォームと資産運用の融合で、あなたの未来をより豊かに</p>
             
             <div class="services-grid">
                 <div class="service-card fade-in">
@@ -832,11 +900,20 @@
                         不動産売買や付帯設備工事に長年携わってきた経験から、多くのお客様がローン負担に悩まれている現状を目の当たりにしてきました。そこで私たちは、単なるリフォーム会社を超えた新しい価値提供を決意しました。
                     </p>
                     <p>
-                        リフォームによって住環境を改善するだけでなく、資産運用という手法を活用することで、お客様の経済的負担を軽減し、より豊かな生活を実現していただきたい。                        それが私たちhandyの使命です。
+                        リフォームによって住環境を改善するだけでなく、資産運用という手法を活用することで、お客様の経済的負担を軽減し、より豊かな生活を実現していただきたい。それが私たちhandyの使命です。
                     </p>
                     <p>
                         お客様一人ひとりの状況に合わせたオーダーメイドのプランをご提案し、理想の住まいと安心の将来設計の両立をサポートいたします。
                     </p>
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(45deg, #f8f9fa, #ffffff); border-radius: 15px; border-left: 4px solid #667eea;">
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem; font-size: 1.2rem;">📚 著書について</h3>
+                        <p style="margin-bottom: 1rem;">
+                            「ホワイトハンディ」という名前で、資産運用、不動産投資、住宅リフォームなど、様々なテーマで電子書籍を執筆しています。実務経験に基づいた実践的な内容で、多くの読者の皆様にご好評をいただいております。
+                        </p>
+                        <a href="https://www.amazon.co.jp/s?k=ホワイトハンディ&i=digital-text" target="_blank" class="btn" style="background: linear-gradient(45deg, #ff9500, #ff7b00); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; box-shadow: 0 5px 15px rgba(255, 149, 0, 0.3); transition: all 0.3s ease;">
+                            📖 Amazon Kindle で書籍を見る
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -845,7 +922,7 @@
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2 class="section-title fade-in">選ばれる理由</h2>
+            <h2 class="section-title fade-in" style="color: white;">選ばれる理由</h2>
             <div class="features-grid">
                 <div class="feature-item fade-in">
                     <span class="feature-number">01</span>
@@ -925,223 +1002,4 @@
     <section class="testimonials">
         <div class="container">
             <h2 class="section-title fade-in">お客様の声</h2>
-            <p class="section-subtitle fade-in">実際にサービスをご利用いただいたお客様からのメッセージ</p>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-content">
-                        <p>"リフォームと同時に資産運用の提案をいただき、月々のローン負担が大幅に軽減されました。10年後の家計がとても楽になりそうです。"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <h4>仙台市のお客様</h4>
-                        <span>キッチン・リビングリフォーム + 資産運用プラン</span>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-content">
-                        <p>"最初は資産運用に不安がありましたが、丁寧な説明と保守的なプランのおかげで安心してお任せできました。リフォームの仕上がりも素晴らしく、大満足です。"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <h4>柴田郡柴田町のお客様</h4>
-                        <span>外壁・屋根リフォーム + 住宅ローン借り換えサポート</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section - 改良版 -->
-    <section id="contact" class="contact-section">
-        <div class="contact-container">
-            <h1 class="contact-section-title">お気軽にご相談ください</h1>
-            <p class="contact-section-subtitle">リフォーム×資産運用について、お気軽にご相談ください</p>
-            
-            <div class="contact-content">
-                <!-- Googleフォーム -->
-                <div class="form-container">
-                    <h2 class="form-title">相談内容が決まっている方</h2>
-                    <p class="form-description">
-                        詳細なご相談内容をお聞かせください
-                    </p>
-                    
-                    <iframe 
-                        src="https://docs.google.com/forms/d/e/1FAIpQLScE58yrvoy0Z6ppepSA4XOKeCprSlFUwALGVltWe1hirb6QFA/viewform?embedded=true" 
-                        class="google-form"
-                        marginheight="0" 
-                        marginwidth="0">
-                        読み込んでいます…
-                    </iframe>
-                </div>
-                
-                <!-- 直接連絡セクション -->
-                <div class="direct-contact">
-                    <h2 class="direct-contact-title">フォーム入力が難しい場合</h2>
-                    <p class="direct-contact-desc">以下の方法でお気軽にお問い合わせください</p>
-                    
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="contact-icon">📞</div>
-                            <div class="contact-details">
-                                <div class="contact-title">電話</div>
-                                <div class="contact-info">
-                                    <a href="tel:090-2883-0216" class="tel-link">
-                                        090-2883-0216
-                                    </a>
-                                </div>
-                                <div class="note">平日 9:00-18:00</div>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon">✉️</div>
-                            <div class="contact-details">
-                                <div class="contact-title">メール</div>
-                                <div class="contact-info">
-                                    <a href="mailto:handy.takano@gmail.com" class="email-link">
-                                        handy.takano@gmail.com
-                                    </a>
-                                    <button onclick="copyEmail()" class="copy-btn">📋 コピー</button>
-                                </div>
-                                <div class="note">24時間受付</div>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon">💬</div>
-                            <div class="contact-details">
-                                <div class="contact-title">LINE</div>
-                                <div class="contact-info">
-                                    <a href="https://line.me/R/ti/p/@195kamxa" class="email-link" target="_blank">
-                                        @195kamxa
-                                    </a>
-                                </div>
-                                <div class="note">友だち追加してください</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 営業時間・対応エリア -->
-                    <div class="info-grid">
-                        <div class="info-box">
-                            <div class="info-title">⏰ 営業時間</div>
-                            <div class="contact-info">9:00〜18:00</div>
-                            <div class="note">※ 営業時間外でも対応できます</div>
-                        </div>
-                        
-                        <div class="info-box">
-                            <div class="info-title">📍 対応エリア</div>
-                            <div class="contact-info">仙台市全域、名取市、岩沼市他県南エリア</div>
-                            <div class="note">※ その他地域もご相談ください</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 handy. All rights reserved.</p>
-            <p>宮城県名取市のリフォーム・資産運用コンサルティング</p>
-        </div>
-    </footer>
-
-    <script>
-        // メールアドレスコピー機能
-        function copyEmail() {
-            const email = 'handy.takano@gmail.com';
-            navigator.clipboard.writeText(email).then(function() {
-                // コピー成功時の処理
-                const button = event.target;
-                const originalText = button.innerHTML;
-                button.innerHTML = '✅ コピー完了!';
-                button.style.background = 'rgba(76, 175, 80, 0.8)';
-                
-                setTimeout(function() {
-                    button.innerHTML = originalText;
-                    button.style.background = 'rgba(255,255,255,0.2)';
-                }, 2000);
-            }).catch(function(err) {
-                // コピー失敗時はアラートでアドレスを表示
-                alert('メールアドレスをコピーしてください: ' + email);
-            });
-        }
-
-        // フォームの読み込み完了を監視
-        window.addEventListener('load', function() {
-            const iframe = document.querySelector('.google-form');
-            if (iframe) {
-                iframe.onload = function() {
-                    console.log('Googleフォームの読み込みが完了しました');
-                };
-            }
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = target.offsetTop - headerHeight;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // FAQ toggle functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                const isActive = faqItem.classList.contains('active');
-                
-                // Close all FAQ items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                }
-            });
-        });
-
-        // Header background change on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 50) {
-                header.style.background = 'rgba(30, 60, 114, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)';
-                header.style.backdropFilter = 'none';
-            }
-        });
-    </script>
-</body>
-</html>
+            <p class="section-subtitle fade
